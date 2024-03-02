@@ -50,7 +50,7 @@ int btree_delete_key(btree *T, B_KEY_SUB_TYPE key);
 
 /*----查找操作----*/
 // 查找key
-btree_node* btreee_search_key(btree *T, B_KEY_SUB_TYPE key);
+btree_node* btree_search_key(btree *T, B_KEY_SUB_TYPE key);
 
 /*----打印信息----*/
 // 打印当前节点信息
@@ -733,7 +733,7 @@ void btree_traversal(btree *T){
 
 // 查找key
 #if KV_BTYPE_INT_INT
-btree_node* btreee_search_key(btree *T, B_KEY_SUB_TYPE key){
+btree_node* btree_search_key(btree *T, B_KEY_SUB_TYPE key){
     if(key > 0){
         btree_node *cur = T->root_node;
         // 先寻找是否为非叶子节点
@@ -765,7 +765,7 @@ btree_node* btreee_search_key(btree *T, B_KEY_SUB_TYPE key){
     return NULL;
 }
 #elif KV_BTYPE_CHAR_CHAR
-btree_node* btreee_search_key(btree *T, B_KEY_SUB_TYPE key){
+btree_node* btree_search_key(btree *T, B_KEY_SUB_TYPE key){
     if(key != NULL){
         btree_node *cur = T->root_node;
         // 先寻找是否为非叶子节点
@@ -962,7 +962,7 @@ int kv_btree_set(kv_btree_t* kv_b, char** tokens){
 // 查找指令
 // 返回值：正常返回node，NULL表示没有
 char* kv_btree_get(kv_btree_t* kv_b, char** tokens){
-    btree_node* node = btreee_search_key(kv_b, tokens[1]);
+    btree_node* node = btree_search_key(kv_b, tokens[1]);
     if(node != NULL){
         for(int i=0; i<node->num; i++){
             if(strcmp(node->keys[i],tokens[1]) == 0){
@@ -984,7 +984,7 @@ int kv_btree_count(kv_btree_t* kv_b){
 // 存在指令
 // 返回值：1存在，0没有
 int kv_btree_exist(kv_btree_t* kv_b, char** tokens){
-    return (btreee_search_key(kv_b, tokens[1]) != NULL);
+    return (btree_search_key(kv_b, tokens[1]) != NULL);
 }
 /*------------------------------------------------------------------*/
 
@@ -1132,7 +1132,7 @@ int main(){
         btree_node* sear = NULL;
         for(int i=0; i<len_array; i++){
             if(KeyArray[i] > 0){
-                sear = btreee_search_key(&T, KeyArray[i]);
+                sear = btree_search_key(&T, KeyArray[i]);
                 pass_flag = false;
                 if(sear != NULL){
                     for(int j=0; j<sear->num; j++){
