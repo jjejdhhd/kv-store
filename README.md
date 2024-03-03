@@ -1,11 +1,10 @@
-# 基于C语言实现内存型数据库（kv存储）
-
 # 源码结构说明
 
 main.c是主函数
 
 # 使用说明
 
+源码全部存放在“kv-storev1”
 需要准备两台Linux机器，.....。直接输入下面的编译指令：
 
 服务端：
@@ -19,7 +18,7 @@ main.c是主函数
 
 # 基于C语言实现内存型数据库(kv存储)
 
-@[toc]
+[toc]
 > - 源代码仓库见Github：[kv-store仓库](https://github.com/jjejdhhd/kv-store)
 > - 参考视频：“零声教育”的“[linux基础架构-Kv存储](https://app0k9osxub4596.h5.xiaoeknow.com/p/decorate/page/eyJpZCI6NDI3OTU2MiwiY2hhbm5lbF9pZCI6IiJ9)”。
 > - 其他源码：[协程](https://github.com/wangbojing/NtyCo)。
