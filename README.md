@@ -1,20 +1,26 @@
-# 源码结构说明
-
-main.c是主函数
-
 # 使用说明
 
-源码全部存放在“kv-storev1”
-需要准备两台Linux机器，.....。直接输入下面的编译指令：
+- “kv-store-v1”：存放全部的项目源码，项目使用C语言完成，代码总量在5000行左右。其中的“code_init”文件夹为前期验证rbtree、btree的增/删/查操作，使用```int```型作为元素类型。
+
+- “Document”：存放项目开发过程中用到的文档或工具。
+
+要运行本项目，需要准备两台Linux机器，“客户端”存放“kv-store-v1”的“tb_kvstore.c”、“服务端”存放“kv-store-v1”中剩余的所有代码（不包括“code_init”文件夹）。编译指令如下：
 
 服务端：
-```gcc -o main main.c kvstore.c array.c rbtree.c btree.c hash.c skiplist.c dhash.c```
+
+```gcc -o main main.c kvstore.c array.c rbtree.c btree.c hash.c dhash.c skiplist.c```
+
 ```./main 9998```
 
 客户端：
+
 ```gcc -o tb_kvstore tb_kvstore.c```
+
 ```./tb_kvstore 192.168.154.130 9998```
 
+下面是整个项目的说明文档，更舒服的排版可以看看CSDN：“[基于C语言实现内存型数据库(kv存储)](https://blog.csdn.net/weixin_46258766/article/details/136228729)”。
+
+***
 
 # 基于C语言实现内存型数据库(kv存储)
 
