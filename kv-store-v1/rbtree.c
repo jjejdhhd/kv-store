@@ -242,7 +242,7 @@ void rbtree_insert_fixup(rbtree *T, rbtree_node *cur){
                     cur->parent->color = BLACK;
                     rbtree_right_rotate(T, cur->parent->parent);
                 }
-                // LR：祖父变红/父变红/当前变黑、父左旋、祖父右旋。最后的当前节点应该是原来的祖父节点/父节点。
+                // LR：祖父变红/父变红/当前变黑、父左旋、祖父右旋。最后的当前节点应该是原来的祖父节点。
                 else{
                     cur->parent->parent->color = RED;
                     cur->parent->color = RED;
@@ -253,7 +253,7 @@ void rbtree_insert_fixup(rbtree *T, rbtree_node *cur){
                 }
             }
             else{
-                // RL：祖父变红/父变红/当前变黑、父右旋、祖父左旋。最后的当前节点应该是原来的祖父节点/父节点。
+                // RL：祖父变红/父变红/当前变黑、父右旋、祖父左旋。最后的当前节点应该是原来的祖父节点。
                 if(cur->parent->left == cur){
                     cur->parent->parent->color = RED;
                     cur->parent->color = RED;
