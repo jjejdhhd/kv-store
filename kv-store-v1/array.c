@@ -227,7 +227,11 @@ int kv_array_set(kv_array_t* kv_a, char** tokens){
 // 查找指令
 char* kv_array_get(kv_array_t* kv_a, char** tokens){
     kv_array_item_t* item = kv_array_search(kv_a, tokens[1], NULL);
-    return item->value;
+    if(item != NULL){
+        return item->value;
+    }else{
+        return NULL;
+    }
 }
 
 // 删除指令，另外若当前块为空就释放当前块
