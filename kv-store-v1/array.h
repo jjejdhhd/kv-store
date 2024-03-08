@@ -35,7 +35,7 @@ int kv_array_desy(kv_array_t* kv_a);
 // 返回值：0表示成功、-1表示失败、-2表示已经有key
 int kv_array_set(kv_array_t* kv_a, char** tokens);
 // 查找指令
-// 返回值：自然数表示kv的索引，-1表示没有
+// 返回值：非空表示有，NULL表示没有
 char* kv_array_get(kv_array_t* kv_a, char** tokens);
 // 删除指令
 // 返回值：0成功，-1失败，-2没有
