@@ -18,6 +18,7 @@
 
 ```./tb_kvstore 192.168.154.130 9998```
 
+视频讲解参考B站：“[【C语言项目笔记】基于C语言实现内存型数据库(kv存储)](https://www.bilibili.com/video/BV1kC411a7xg/)”
 下面是整个项目的说明文档，更舒服的排版可以看看CSDN：“[基于C语言实现内存型数据库(kv存储)](https://blog.csdn.net/weixin_46258766/article/details/136228729)”。
 
 ***
